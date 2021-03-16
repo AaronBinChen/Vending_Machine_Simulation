@@ -76,7 +76,7 @@ def input_item_amt():
     else:
         print("Input item amount has to be greater than or equal to 0")
 
-# Function to show various product images when label is hovered
+# Function to show various product images when label is hovered. Iterate through the images.
 def product1_change_image(self):
     global i
     if i <= 4:
@@ -93,7 +93,7 @@ def product1_change_image_back(self):
     image_hover_label.config(image = "")
     image_hover_label.image = ""
 
-# Function to show various product images when label is hovered
+# Function to show various product images when label is hovered. Iterate through the images.
 def product2_change_image(self):
     global j
     if j <= 4:
@@ -110,7 +110,7 @@ def product2_change_image_back(self):
     image_hover_label.config(image = "")
     image_hover_label.image = ""
 
-# Function to show various product images when label is hovered
+# Function to show various product images when label is hovered. Iterate through the images.
 def product3_change_image(self):
     global k
     if k <= 2:
@@ -127,7 +127,7 @@ def product3_change_image_back(self):
     image_hover_label.config(image = "")
     image_hover_label.image = ""
 
-# Function to show various product images when label is hovered
+# Function to show various product images when label is hovered. Iterate through the images.
 def product4_change_image(self):
     global l
     if l <= 4:
@@ -144,7 +144,7 @@ def product4_change_image_back(self):
     image_hover_label.config(image = "")
     image_hover_label.image = ""
 
-# Function to be called when one of the product button is clicked on
+# Function to be called when one of the product button is clicked on. Calculates the change and print outputs to the payment_status box. Changes dispensary image and plays audio of can dropping
 def buy_product(product_type):
     global inserted_payment 
     global payment_success
@@ -272,11 +272,13 @@ product2_label = Label(product2, text = "Fanta - Orange Juice", font = ("Helveti
 product3_label = Label(product3, text = "Yakult - Sweet Probiotic Milk Boba Flavor", font = ("Helvetica", 12, "bold"), height = 2, bg = "bisque")
 product4_label = Label(product4, text = "Caprisun - Fruit Juice", font = ("Helvetica", 12, "bold"), height = 2, bg = "aquamarine")
 
+# Displaying labels on the grid system
 product1_label.grid(row = 1, column = 0)
 product2_label.grid(row = 1, column = 0)
 product3_label.grid(row = 1, column = 0)
 product4_label.grid(row = 1, column = 0)
 
+# Functionality for product labels to display preview images when hovered/unhovered
 product1_label.bind("<Enter>", product1_change_image)
 product1_label.bind("<Leave>", product1_change_image_back)
 product2_label.bind("<Enter>", product2_change_image)
