@@ -170,7 +170,7 @@ def buy_product(product_type):
         # If there is enough for the customer, checking for the change allows us to see if there's enough money inserted or not.
         # If the change is positive, we know that there was definitely enough money inserted.
         if change > 0:
-            current_number_of_product -= item_amount                                                            # Reduce the availability in the vending machine
+            inventory_dict[product_type] -= item_amount                                                         # Reduce the availability in the vending machine
             payment_success = True                                                                              # Payment was successful as they bought the requested items
             if payment_status.size() >= 3 and payment_success is True:                                          # Checks if the previous transaction is still on the screen and get rid of it
                 payment_status.delete(0, END)
@@ -179,14 +179,14 @@ def buy_product(product_type):
             payment_status.insert(END, "You bought " + str(item_amount) + " " + str(product_type))              # Printing to the payment_status box
             payment_status.insert(END, "Here's your change: " + str(change))                                    # Printing to the payment_status box
             inserted_payment = 0                                                                                # Now that the transaction ended and change was given, set the inserted_payment to 0 again
-            if current_number_of_product == 0:                                                                  # If that product is finished, send a message to the status box so future customers know it's out of stock. 
+            if inventory_dict[product_type] == 0:                                                               # If that product is finished, send a message to the status box so future customers know it's out of stock. 
                 status_box.insert(END, str(product_type) + " is out of stock!")
             dispense_image = ImageTk.PhotoImage(Image.open(dispense_dict[product_type]).resize((500,500), Image.ANTIALIAS))
             dispenser_label.config(image = dispense_image)
             dispenser_label.image = dispense_image
             play_audio()
         elif change == 0.0:                                                                                     # Just enough money was inserted to buy the product, hence, no change                                        
-            current_number_of_product -= item_amount                                                            # Reduce the availability in the vending machine
+            inventory_dict[product_type] -= item_amount                                                         # Reduce the availability in the vending machine
             payment_success = True                                                                              # Payment was successful as they bought the requested items
             if payment_status.size() >= 3 and payment_success is True:                                          # Checks if the previous transaction is still on the screen and gets rid of it
                 payment_status.delete(0, END)
@@ -195,7 +195,7 @@ def buy_product(product_type):
             payment_status.insert(END, "You bought " + str(item_amount) + " " + str(product_type))              # Printing to the payment_status box
             payment_status.insert(END, "Here's your change: " + str(change))                                    # Printing to the payment_status box
             inserted_payment = 0                                                                                # Now that the transaction ended and change was given, set the inserted_payment to 0 again
-            if current_number_of_product == 0:                                                                  # If the product is finished, send a message to the status box so future customers know it's out of stock.
+            if inventory_dict[product_type] == 0:                                                               # If the product is finished, send a message to the status box so future customers know it's out of stock.
                 status_box.insert(END, str(product_type) + " is out of stock!")
             dispense_image = ImageTk.PhotoImage(Image.open(dispense_dict[product_type]).resize((500,500), Image.ANTIALIAS))
             dispenser_label.config(image = dispense_image)
@@ -205,7 +205,7 @@ def buy_product(product_type):
             payment_status.insert(END, "Not enough money! You only inserted " + str(inserted_payment))          # Print to payment_status box to alert the customer that they need to insert more money
     
     # If there is no availability, send message to alert customer that product is out of stock
-    else:                                                                                                       
+    elif current_number_of_product == 0:                                                                                                       
         status_box.insert(END, str(product_type) + " is out of stock!")
 
     # Once the transaction is finished, we want to disable the buttons again so people can't buy anything before inserting their money/payment
