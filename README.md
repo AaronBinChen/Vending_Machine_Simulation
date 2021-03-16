@@ -30,3 +30,20 @@ Once you're done downloading these libraries, just run the sim.py file on Visual
 <p>
     This is the display right when the python file is run. Note that the middle column is empty because there's nothing to display yet. Also note that the status box and transaction system on the right hand column is also empty due to the same reason.
 </p>
+
+## Using the Vending Machine Simulation
+<p>
+    To get a preview of the product, please hover over the words of each product label. You can hover and unhover to see more than one preview of a product. 
+</p>
+
+<p>
+    You may have noticed that the buttons where the product images are located seem to be grayed-out. For this to be active, you first have to insert your payment and then click the green 'Pay Now' Button. Then, you have to type in a certain amount of the products that you want to buy. Once you type it in, press the red 'Submit Item Amount' button. You will notice that the buttons, where the product images are located, are now normal. Feel free to press any one product and see what happens!  
+</p>
+
+<p>
+    If you did not insert enough money the first time, that's perfectly ok. Please just type in the amount that will be required to make up the difference. For example, let's say you put in 25 cents for a Yakult. This isn't enough as an Yakult cost 50 cents. At this point, you can just type 25 cents into the entry field again instead of 50 cents. By typing 25 cents, the system will add this newly entered 25 cents to the previously entered 25 cents to make up a total of 50 cents. 
+</p>
+
+<p>
+    The restock button can just be pressed once and the vending machine will be fully restocked to 30 items per product. 
+</p>
