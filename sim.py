@@ -175,9 +175,9 @@ def buy_product(product_type):
             if payment_status.size() >= 3 and payment_success is True:                                          # Checks if the previous transaction is still on the screen and get rid of it
                 payment_status.delete(0, END)
                 payment_success = False
-            payment_status.insert(END, "You inserted " + str(inserted_payment))                                 # Printing to the payment_status box
+            payment_status.insert(END, "You inserted $" + str(inserted_payment))                                 # Printing to the payment_status box
             payment_status.insert(END, "You bought " + str(item_amount) + " " + str(product_type))              # Printing to the payment_status box
-            payment_status.insert(END, "Here's your change: " + str(change))                                    # Printing to the payment_status box
+            payment_status.insert(END, "Here's your change: $" + str(change))                                    # Printing to the payment_status box
             inserted_payment = 0                                                                                # Now that the transaction ended and change was given, set the inserted_payment to 0 again
             if inventory_dict[product_type] == 0:                                                               # If that product is finished, send a message to the status box so future customers know it's out of stock. 
                 status_box.insert(END, str(product_type) + " is out of stock!")

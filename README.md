@@ -1,6 +1,8 @@
 # Vending Machine Simulation 
 Resideo Coding Exercise March 2021 by Aaron Chen
 
+Video Demo: https://www.youtube.com/watch?v=51xrGU4eQfw
+
 ## Thought and Design Process
 <p>
     This project was done for the coding exercise given by Eric Oh. The exercise was to allow a GUI screen to show a customer 4 different product selections. Each product has a different cost and the customer can purchase any amount. I originally planned on using Django to create the front-end and the back-end. However, I decide that it will be much simpler to just stick with Tkinter because of the simplicity of their grid system and widgets. 
@@ -46,4 +48,10 @@ Once you're done downloading these libraries, just run the sim.py file on Visual
 
 <p>
     The restock button can just be pressed once and the vending machine will be fully restocked to 30 items per product. 
+</p>
+
+![alt text](Snapshot_from_Demo.png)
+
+<p>
+    Shown above is a snapshot of the video demo I gave. I was hovering over the Fanta product label while waiting for the dispension of the Yakult. 
 </p>
